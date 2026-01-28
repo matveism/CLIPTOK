@@ -1,0 +1,77 @@
+:root {
+  --cliptok-bg: #050816;
+  --cliptok-accent-1: #7c3aed;
+  --cliptok-accent-2: #22d3ee;
+}
+
+body {
+  margin: 0;
+  background: var(--cliptok-bg);
+  color: #f9fafb;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+}
+
+/* Full-page background */
+.app-root {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(circle at top left, #111827 0, #020617 45%, #000 100%);
+}
+
+/* Blurred glowing blobs */
+.app-root::before,
+.app-root::after {
+  content: "";
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 999px;
+  filter: blur(80px);
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.app-root::before {
+  top: -120px;
+  left: -80px;
+  background: radial-gradient(circle, var(--cliptok-accent-1), transparent 60%);
+}
+
+.app-root::after {
+  bottom: -140px;
+  right: -60px;
+  background: radial-gradient(circle, var(--cliptok-accent-2), transparent 60%);
+}
+
+/* Layout */
+.header {
+  padding: 24px 32px;
+}
+
+.logo {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.main-shell {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 32px 20px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Glassmorphism cards */
+.main-card {
+  border-radius: 24px;
+  padding: 24px 20px;
+  background: rgba(15, 23, 42, 0.78);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  box-shadow:
+    0 18px 45px rgba(15, 23, 42, 0.9),
+    0 0 0 1px rgba(15, 23, 42, 0.9);
+  backdrop-filter: blur(18px);
+}
